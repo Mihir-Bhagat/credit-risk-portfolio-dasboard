@@ -1,6 +1,8 @@
 # Credit Risk Portfolio Monitor
 
 Public Link for this dashboard is :- https://credit-risk-portfolio-dashboard.streamlit.app/
+
+
 A working credit-risk monitoring dashboard built from 5 synthetic bank tables (about 14,700 loan accounts), with two embedded AI features: **Ask the Portfolio** (LLM question answering grounded in the data) and **Anomaly detection** (a review list with reasons and a Confirm/Dismiss log).
 
 Python version: **3.13** (see `.python-version`; tested on 3.13).
