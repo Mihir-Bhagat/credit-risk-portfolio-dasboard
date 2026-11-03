@@ -1,0 +1,23 @@
+# secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+secrets.toml
+*.pem
+*.key
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+# runtime state (analyst decisions) and test scratch
+outputs/
+tests/reports/screenshots/
+tests/.verify_results.json
+tests/reports/pdf_previews/

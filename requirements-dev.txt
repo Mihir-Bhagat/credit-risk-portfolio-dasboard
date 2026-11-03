@@ -1,0 +1,7 @@
+# Test and verification tooling (not needed to run the app)
+-r requirements.txt
+pytest==9.2.0
+pypdf==6.21.4
+playwright==1.63.0
+PyYAML==6.0.3
+pillow==13.0.0

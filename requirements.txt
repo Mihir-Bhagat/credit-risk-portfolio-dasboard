@@ -1,0 +1,12 @@
+# Runtime dependencies, every package pinned (tested on Python 3.13)
+streamlit==1.66.1
+plotly==7.1.0
+lightgbm==4.7.0
+scipy==1.18.1
+pandas==3.1.0
+numpy==2.5.4
+scikit-learn==1.9.1
+pyarrow==26.0.0
+joblib==1.6.0
+requests==2.34.2
+reportlab==5.1.0
