@@ -1,0 +1,27 @@
+# dataviz validate_palette.js output (run 2026-11-03T06:45:21Z)
+## categorical
+palette: #2a78d6,#eb6834,#1baf7a,#eda100,#e87ba4
+
+Palette (light, surface #fcfcfb, categorical): 5 slots
+  [PASS] Lightness band         all 5 inside L 0.43–0.77
+  [PASS] Chroma floor           all 5 >= 0.1
+  [PASS] CVD separation         worst adjacent #eda100↔#1baf7a ΔE 9.1 (protan) · tritan 5.8
+  [PASS] Normal-vision floor    worst adjacent #e87ba4↔#eda100 ΔE 19.6 (normal)
+  [WARN] Contrast vs surface    below 3:1 — relief required (visible labels or table view): [["#1baf7a",2.74],["#eda100",2.11],["#e87ba4",2.62]]
+
+  → ALL CHECKS PASS  (CVD in the 6–8 floor band is legal ONLY with secondary encoding: direct labels, gaps, or texture)
+  scope: categorical palettes only. For a lone status/text color check text contrast with this script's apca() or contrast(); for a sequential ramp, lightness monotonicity.
+
+
+## risk-band ramp (sequential: the categorical lightness-band and chroma checks do not apply; its contract is monotonic lightness, checked in tests/test_j_quality.py)
+
+Palette (light, surface #fcfcfb, categorical): 4 slots
+  [FAIL] Lightness band         outside band: [["#9ec5f2",0.811],["#0f2f5e",0.311]]
+  [FAIL] Chroma floor           below floor (reads gray): [["#9ec5f2",0.076],["#0f2f5e",0.092]]
+  [PASS] CVD separation         worst adjacent #4f93e0↔#9ec5f2 ΔE 15.6 (protan) · tritan 15.3
+  [PASS] Normal-vision floor    worst adjacent #1f5fb0↔#4f93e0 ΔE 16.3 (normal)
+  [WARN] Contrast vs surface    below 3:1 — relief required (visible labels or table view): [["#9ec5f2",1.75]]
+
+  → FAILED — fix the marked checks  (CVD in the 6–8 floor band is legal ONLY with secondary encoding: direct labels, gaps, or texture)
+  scope: categorical palettes only. For a lone status/text color check text contrast with this script's apca() or contrast(); for a sequential ramp, lightness monotonicity.
+
