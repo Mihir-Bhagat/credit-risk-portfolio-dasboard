@@ -1,0 +1,11 @@
+item,psi,status
+risk_score,0.0039975423032485875,stable
+annual_income,0.004920894077923252,stable
+years_employed,0.012640754308039053,stable
+rep_mean_dpd,0.003472315864418458,stable
+age,0.009205688517898682,stable
+bur_mean_dpd,0.00594300432503406,stable
+rep_n_late,0.0013426344868605986,stable
+bur_max_dpd,0.004773030606758091,stable
+loan_to_income,0.0027990693561787345,stable
+years_at_residence,0.005630697910046624,stable

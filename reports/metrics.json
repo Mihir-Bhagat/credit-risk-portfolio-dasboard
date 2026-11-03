@@ -1,0 +1,84 @@
+{
+  "seed": 42,
+  "split": {
+    "method": "GroupShuffleSplit by customer_id",
+    "test_size": 0.2,
+    "n_train": 11737,
+    "n_test": 2948,
+    "train_default_rate": 0.16119962511715089,
+    "test_default_rate": 0.16010854816824965,
+    "customer_overlap": 0,
+    "tuning_rows": 11737,
+    "tuning": "GroupKFold(5) on training rows only"
+  },
+  "models": {
+    "logistic_regression": {
+      "best_params": {
+        "C": 0.001
+      },
+      "cv_auc": 0.6782495364990646,
+      "test": {
+        "auc": 0.683023979354344,
+        "ks": 0.26847224884313137,
+        "gini": 0.366047958708688,
+        "pr_auc": 0.3224094424994941,
+        "brier": 0.12510052052189272,
+        "auc_ci95": [
+          0.654233512118873,
+          0.7075870229021343
+        ]
+      }
+    },
+    "lightgbm": {
+      "best_params": {
+        "num_leaves": 3,
+        "n_estimators": 300
+      },
+      "cv_auc": 0.6766413698512934,
+      "test": {
+        "auc": 0.6778916582240355,
+        "ks": 0.27887379863640094,
+        "gini": 0.35578331644807104,
+        "pr_auc": 0.3142973704003795,
+        "brier": 0.12569689686145785,
+        "auc_ci95": [
+          0.6500523620188791,
+          0.7038635654171967
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "auc_diff_lightgbm_minus_lr": -0.005219252627126014,
+    "ci95": [
+      -0.01388025655160732,
+      0.0028411055354025335
+    ],
+    "significant": false,
+    "statement": "No reliable difference between the models: LightGBM minus logistic AUC = -0.005 (95% paired-bootstrap CI -0.014 to 0.003 includes 0). The simpler, more explainable model is a defensible choice."
+  },
+  "champion": "logistic_regression",
+  "champion_rule": "higher mean GroupKFold AUC on training rows",
+  "risk_band_thresholds": {
+    "quantiles": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "cutoffs": [
+      0.1418813813940733,
+      0.2059825851826329,
+      0.30801428384010826
+    ]
+  },
+  "n_features": 49,
+  "psi_score_train_vs_test": 0.0039975423032485875,
+  "sensitivity": {
+    "lgbm_test_auc_profile_only": 0.6452049848032638,
+    "lgbm_test_auc_profile_plus_repayment": 0.6726044604474138,
+    "lgbm_test_auc_all_features": 0.6778916582240355,
+    "lgbm_test_auc_bureau_point_in_time": 0.6744510007940636,
+    "max_single_feature_auc": 0.6178140000337833,
+    "max_single_feature_name": "annual_income"
+  }
+}

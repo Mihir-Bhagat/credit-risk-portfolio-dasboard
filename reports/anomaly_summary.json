@@ -1,0 +1,20 @@
+{
+  "accounts": 14685,
+  "flagged": 238,
+  "flag_rate": 0.01620701395982295,
+  "default_rate_flagged": 0.3025210084033613,
+  "default_rate_not_flagged": 0.1586488544334464,
+  "flagged_by_kind": {
+    "repayment": 203,
+    "bureau,repayment": 18,
+    "bureau": 17
+  },
+  "params": {
+    "ANOMALY_MIN_SIGNALS": 2,
+    "ANOMALY_OWN_DPD_JUMP_DAYS": 25,
+    "ANOMALY_OWN_DPD_LAST3_MIN": 30,
+    "ANOMALY_OWN_PAID_DROP": 0.5,
+    "ANOMALY_PEER_PERCENTILE": 0.99,
+    "ANOMALY_STRONG_SINGLE_SIGNAL": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "portfolio": {
+    "accounts": 14685,
+    "default_rate": 0.1609805924412666,
+    "exposure": 601119531.64,
+    "region_spread": {
+      "min_region": "Central",
+      "min_rate": 0.14995678478824545,
+      "max_region": "South",
+      "max_rate": 0.1686111111111111
+    }
+  },
+  "insights": [
+    {
+      "id": "I1",
+      "dims": [
+        "loan_type"
+      ],
+      "title": "Mortgages are the riskiest product and also 52% of exposure",
+      "evidence": {
+        "segment": "Mortgage",
+        "default_rate": 0.24650837988826815,
+        "portfolio_default_rate": 0.1609805924412666,
+        "share_of_exposure": 0.5231467865002477,
+        "accounts": 1432,
+        "exposure": 314473751.28,
+        "lowest_segment": "Auto Loan",
+        "lowest_default_rate": 0.13877118644067796
+      },
+      "so_what": "Mortgage default rate is 24.7% vs 16.1% for the portfolio and 13.9% for Auto Loan. Because it carries 52% of exposure, a few points of extra default here matter more than any other product. Secured does not mean safe: review underwriting and collateral valuation on this book first."
+    },
+    {
+      "id": "I2",
+      "dims": [
+        "income_band",
+        "age_band"
+      ],
+      "title": "Default risk falls steadily with income: 39% below 30k vs 8% above 120k",
+      "evidence": {
+        "low_band": "<30k",
+        "low_rate": 0.38666666666666666,
+        "high_band": "120k+",
+        "high_rate": 0.07840772014475271,
+        "under60k_share_accounts": 0.21893088185223017,
+        "under60k_share_defaults": 0.34348561759729274,
+        "youngest_rate": 0.22388955582232895,
+        "oldest_rate": 0.10553278688524591
+      },
+      "so_what": "Customers earning under 60k are 22% of accounts but 34% of defaults. Age follows the same pattern (22.4% under 25 vs 10.6% at 55+). Affordability checks and lower limits for low-income, young applicants are the cheapest lever."
+    },
+    {
+      "id": "I3",
+      "dims": [
+        "employment_type"
+      ],
+      "title": "Unemployed customers default at 35%, about 2.3x salaried",
+      "evidence": {
+        "segment": "Unemployed",
+        "default_rate": 0.34958217270194986,
+        "accounts": 718,
+        "share_of_exposure": 0.049283912534291444,
+        "salaried_rate": 0.14974821097270077,
+        "second_segment": "Contract",
+        "second_rate": 0.17338451695457455
+      },
+      "so_what": "The segment is only 4.9% of exposure but is the sharpest single risk marker (718 accounts). Other employment types sit within a narrow band (13.6% to 17.3%), so a decline or manual-review rule for this segment is easy to target without penalising everyone else."
+    },
+    {
+      "id": "I4",
+      "dims": [
+        "loan_type",
+        "employment_type"
+      ],
+      "title": "Cross-cut: Unemployed Credit Card holders default at 39% (n=197)",
+      "evidence": {
+        "loan_type": "Credit Card",
+        "employment_type": "Unemployed",
+        "default_rate": 0.38578680203045684,
+        "accounts": 197,
+        "exposure": 1541700.89,
+        "min_cell_size": 100,
+        "top_loan_type_employed_min": 0.20198675496688742,
+        "top_loan_type_employed_max": 0.27205882352941174
+      },
+      "so_what": "The worst cell with at least 100 accounts is Unemployed x Credit Card at 38.6% (2.4x the portfolio rate). Separately, Mortgage default stays between 20.2% and 27.2% even for employed groups, so its risk is a product effect, not just an unemployment effect. Use the pair, not either dimension alone, for limit setting."
+    },
+    {
+      "id": "I5",
+      "dims": [
+        "repayment"
+      ],
+      "title": "A missed payment in the first 3 months lifts default risk from 15% to 22%",
+      "evidence": {
+        "flagged_accounts": 1905,
+        "flagged_share": 0.12972420837589377,
+        "rate_with_early_miss": 0.2152230971128609,
+        "rate_without": 0.15289514866979656,
+        "rate_any_missed_12m": 0.20598821989528796,
+        "rate_never_missed_12m": 0.1288930362766826,
+        "share_any_missed_12m": 0.41620701395982296
+      },
+      "so_what": "1,905 accounts (13.0%) missed at least one of their first three payments and default at 21.5% vs 15.3%. Accounts that never miss in 12 months default at 12.9%. An early-collections trigger at month 3 reaches the riskiest accounts while there is still time to restructure."
+    }
+  ]
+}

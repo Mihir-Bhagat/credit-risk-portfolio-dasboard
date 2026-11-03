@@ -1,0 +1,9 @@
+{
+  "target_default": "the target",
+  "gender": "protected attribute (profiling only)",
+  "marital_status": "protected attribute (profiling only)",
+  "customer_since": "unreliable: 50 % of loans originate before it (DQ10)",
+  "origination_date": "calendar date; not used as a predictor",
+  "collections_events.*": "follows delinquency: consequence of the target, excluded (DQ12)",
+  "account_id / customer_id": "identifiers"
+}

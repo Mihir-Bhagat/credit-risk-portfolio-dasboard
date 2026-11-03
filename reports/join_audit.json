@@ -1,0 +1,29 @@
+{
+  "rows_raw": {
+    "customers": 10000,
+    "loans": 14685,
+    "bureau": 22979,
+    "repayment": 176220,
+    "collections": 8635
+  },
+  "accounts_in": 14685,
+  "accounts_out": 14685,
+  "account_id_unique": true,
+  "orphans": {
+    "loans_without_customer": 0,
+    "bureau_without_customer": 0,
+    "repayment_without_loan": 0,
+    "collections_without_loan": 0
+  },
+  "coverage": {
+    "accounts_with_repayment": 14685,
+    "accounts_with_collections": 4278,
+    "customers_with_bureau": 8992
+  },
+  "join_logic": [
+    "loan_accounts (grain: account) LEFT JOIN customers ON customer_id  [many-to-one, validated]",
+    "LEFT JOIN repayment aggregates (months 1..12 grouped by account_id)  [one row per account]",
+    "LEFT JOIN bureau aggregates (grouped by customer_id)  [one row per customer, so one per account]",
+    "LEFT JOIN collections aggregates (grouped by account_id; analytics only)  [one row per account]"
+  ]
+}
